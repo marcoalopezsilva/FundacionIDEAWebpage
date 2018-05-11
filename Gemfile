@@ -8,6 +8,9 @@ source 'https://rubygems.org'
  # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
  gem 'rails', '~> 5.1.2'
 
+#UI utilities
+gem 'bootstrap-sass'
+
  # #1
  group :production do
    #pg causes an error in my laptop; will have to change it later

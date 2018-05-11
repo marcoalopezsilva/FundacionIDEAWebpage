@@ -3,12 +3,53 @@
   <head>
     <title>Cms</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <div class="container-fluid">
+
+        <header class="idea_header">
+            <div class="subheader1">
+                <%= link_to image_tag("Idea logo blanco web.png"), root_path, :class => "logo" %>
+                <div class="subheader1a">
+                    <p>Fundación IDEA: El centro mexicano de investigación en políticas públicas </p>
+                    <p>Administración</p>
+                </div>
+            </div>
+            <div class="buscador">
+                <form class="pull-right">
+                    <input type="search" placeholder="Texto de búsqueda">
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+            <div class="container categorias">
+                <div class="row">
+                    <a class="col-8">Emprendimiento</a>
+                    <a class="col-8">Innovación</a>
+                    <a class="col-8">Desarrollo Social</a>
+                    <a class="col-8">Educación</a>
+                    <a class="col-8">Juventudes</a>
+                    <a class="col-8">Salud</a>
+                    <a class="col-8">Desarrollo Urbano</a>
+                </div>
+            </div>
+        </header>
+
+
+    <!-- VIEWS CONTENT ARE RENDERED HERE -->
     <%= yield %>
+
+    <div class="footer">
+        <p>Derechos Reservados, 2018, Fundación para la Implementación, Diseño, Evaluación y Análisis de Políticas Públicas, Fundación IDEA, A.C.<br />
+         Leibnitz # 20, Piso 11, Colonia Anzures, Delegación Miguel Hidalgo, Ciudad de México, 11590<br/>
+         Teléfono: +52(55)5208-1403</p>
+     </div>
+
+    </div>
+
   </body>
 </html>

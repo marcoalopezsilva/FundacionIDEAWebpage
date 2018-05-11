@@ -13,3 +13,44 @@
  *= require_tree .
  *= require_self
  */
+ html {
+     font-family: 'Montserrat', sans-serif;
+ }
+
+  .idea_header {
+      width: 100%;
+      background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
+  }
+
+ .subheader1 {
+     height: 120px;
+     padding: 10px;
+ }
+
+ .logo {
+     width: 50%;
+     float: left;
+ }
+
+.subheader1a {
+     color: white;
+     text-align: right;
+ }
+
+ .buscador {
+     width: 100%;
+     height: 4rem;
+     padding: 10px;
+     background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
+ }
+
+  .footer {
+    width: 100%;
+    background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
+    color: white;
+    font-size: 12px;
+    padding: 4px;
+}
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
