@@ -1,3 +1,41 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.publications-container {
+  margin-top: 170px;
+}
+
+.publications-container h4 {
+  font-weight: bold;
+  text-transform: uppercase;
+  padding-left: 25px;
+}
+
+.publications-container h5 {
+  font-weight: bold;
+}
+
+.publications {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.publication-card {
+  flex: 1 28%;
+  margin: 2%;
+}
+
+.publication-image img {
+  max-width: 100%;
+  border: 1px solid rgba(63,169,245, 0.5);
+  max-height: 300px;
+  display:block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.publication-info {
+  margin-top: auto;
+  text-align: center;
+}

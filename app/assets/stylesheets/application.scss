@@ -13,22 +13,31 @@
  *= require_tree .
  *= require_self
  */
- html {
-     font-family: 'Montserrat', sans-serif;
- }
+
+ $azul_fondo: rgb(63,169,245);
+ $verde_fondo:  rgb(122,201,67);
+
+html body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
 
   .idea_header {
       width: 100%;
-      background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
+      background: linear-gradient(90deg, $azul_fondo, $verde_fondo);
+      padding-bottom: 2px;
+      margin-bottom: 20px;
+      position: fixed;
   }
 
  .subheader1 {
-     height: 120px;
+     height: 60px;
      padding: 10px;
+     margin-right: 20px;
  }
 
- .logo {
-     width: 50%;
+ .logo img {
+     height:50px;
      float: left;
  }
 
@@ -38,19 +47,58 @@
  }
 
  .buscador {
-     width: 100%;
      height: 4rem;
-     padding: 10px;
-     background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
+     padding: 10px 20px 20px 20px;
+     margin: 10px 0 0 10px;
+     background: linear-gradient(90deg, $azul_fondo, $verde_fondo);
  }
 
-  .footer {
-    width: 100%;
-    background: linear-gradient(90deg, rgb(63,169,245), rgb(122,201,67));
-    color: white;
-    font-size: 12px;
-    padding: 4px;
+.barra-categorias {
+  padding: 10px 20px 0 0;
 }
 
+.btn-azul {
+  background-color: $azul_fondo;
+  color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.categorias {
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.5;
+  padding: 5px;
+  border-radius: 2.5px;
+  text-align: center;
+
+}
+
+.categorias:link {
+  text-decoration: none;
+}
+
+.categorias:hover {
+  background-color: #DCDCDC;
+  cursor: pointer;
+}
+
+.footer {
+    width: 100%;
+    background: linear-gradient(90deg, $azul_fondo, $verde_fondo);
+    color: white;
+    font-size: 12px;
+    padding: 10px;
+}
+
+.footer p {
+  font-size: 100%;
+  line-height: 80%;
+}
  @import "bootstrap-sprockets";
  @import "bootstrap";

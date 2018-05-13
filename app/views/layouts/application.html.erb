@@ -4,7 +4,7 @@
     <title>Cms</title>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', 'https://fonts.googleapis.com/css?family=Montserrat:300,400', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
@@ -12,43 +12,51 @@
 
     <div class="container-fluid">
 
-        <header class="idea_header">
+        <div class="idea_header">
             <div class="subheader1">
                 <%= link_to image_tag("Idea logo blanco web.png"), root_path, :class => "logo" %>
                 <div class="subheader1a">
-                    <p>Fundación IDEA: El centro mexicano de investigación en políticas públicas </p>
-                    <p>Administración</p>
+                    <!--p>Fundación IDEA: El centro mexicano de investigación en políticas públicas </p-->
                 </div>
             </div>
             <div class="buscador">
-                <form class="pull-right">
-                    <input type="search" placeholder="Texto de búsqueda">
-                    <button type="submit">Buscar</button>
-                </form>
-            </div>
-            <div class="container categorias">
-                <div class="row">
-                    <a class="col-8">Emprendimiento</a>
-                    <a class="col-8">Innovación</a>
-                    <a class="col-8">Desarrollo Social</a>
-                    <a class="col-8">Educación</a>
-                    <a class="col-8">Juventudes</a>
-                    <a class="col-8">Salud</a>
-                    <a class="col-8">Desarrollo Urbano</a>
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="input-group input-group-md">
+                    <input type="text" class="form-control input-md" id="search-term" placeholder="Término a buscar">
+                      <span class="input-group-btn">
+                        <button class="btn btn-azul" type="submit">Buscar</button>
+                      </span>
+                    </div>
+                  </div>
                 </div>
             </div>
-        </header>
+            <nav class="navbar-expand-lg barra-categorias">
+              <ul >
+                <li><a class="categorias" href="#">Emprendimiento</a></li>
+                <li><a class="categorias" href="#">Innovación</a></li>
+                <li><a class="categorias" href="#">Desarrollo Social</a></li>
+                <li><a class="categorias" href="#">Educación</a></li>
+                <li><a class="categorias" href="#">Juventudes</a></li>
+                <li><a class="categorias" href="#">Salud</a></li>
+                <li><a class="categorias" href="#">Desarrollo Urbano</a></li>
+              </ul>
+            </nav>
 
+        </div>
+
+      </div>
 
     <!-- VIEWS CONTENT ARE RENDERED HERE -->
     <%= yield %>
-
-    <div class="footer">
-        <p>Derechos Reservados, 2018, Fundación para la Implementación, Diseño, Evaluación y Análisis de Políticas Públicas, Fundación IDEA, A.C.<br />
-         Leibnitz # 20, Piso 11, Colonia Anzures, Delegación Miguel Hidalgo, Ciudad de México, 11590<br/>
-         Teléfono: +52(55)5208-1403</p>
-     </div>
-
+    <div class="container-fluid">
+      <div class="footer">
+          <p>Derechos Reservados, 2018, Fundación para la Implementación, Diseño, Evaluación y Análisis de Políticas Públicas, Fundación IDEA, A.C.</p>
+          <p>Leibnitz # 20, Piso 11, Colonia Anzures, Delegación Miguel Hidalgo, Ciudad de México, 11590</p>
+          <p>Teléfono: +52(55)5208-1403</p>
+          <p class="pull-right">Administración</p>
+          </br>
+      </div>
     </div>
 
   </body>
