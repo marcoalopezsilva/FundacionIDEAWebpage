@@ -11,13 +11,14 @@ source 'https://rubygems.org'
 #UI utilities
 gem 'bootstrap-sass'
 
- # #1
+# Gems to manage users
+gem 'devise'
+
  group :production do
    #pg causes an error in my laptop; will have to change it later
    #gem 'pg'
  end
 
- # #2
  group :development do
    # Use sqlite3 as the development database for Active Record
    gem 'sqlite3'

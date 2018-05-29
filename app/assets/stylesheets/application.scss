@@ -28,10 +28,10 @@ html body {
       padding-bottom: 2px;
       margin-bottom: 20px;
       position: fixed;
+      top: 0;
   }
 
  .subheader1 {
-     height: 60px;
      padding: 10px;
      margin-right: 20px;
  }
@@ -47,14 +47,14 @@ html body {
  }
 
  .buscador {
-     height: 4rem;
-     padding: 10px 20px 20px 20px;
+     /* height: 4rem; */
+     padding: 10px 20px 10px 20px;
      margin: 10px 0 0 10px;
      background: linear-gradient(90deg, $azul_fondo, $verde_fondo);
  }
 
 .barra-categorias {
-  padding: 10px 20px 0 0;
+  padding: 10px 20px 10px 20px;
 }
 
 .btn-azul {
@@ -88,6 +88,10 @@ nav ul {
   cursor: pointer;
 }
 
+.push {
+    margin-bottom: 180px;
+}
+
 .footer {
     width: 100%;
     background: linear-gradient(90deg, $azul_fondo, $verde_fondo);
@@ -100,5 +104,18 @@ nav ul {
   font-size: 100%;
   line-height: 80%;
 }
+
+.notice {
+    color: red;
+    font-weight: bold;
+    padding: 0px;
+}
+
+.alert {
+    color: orange;
+    font-weight: bold;
+    padding: 0px;
+}
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
