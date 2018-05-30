@@ -14,6 +14,8 @@ gem 'bootstrap-sass'
 # Gems to manage users
 gem 'devise'
 gem 'figaro'
+gem 'pundit'
+gem 'devise_invitable', '~> 1.7.0'
 
  group :production do
    #pg causes an error in my laptop; will have to change it later

@@ -1,0 +1,31 @@
+en:
+  devise:
+    failure:
+      invited: "You have a pending invitation, accept it to finish creating your account."
+    invitations:
+      send_instructions: "An invitation email has been sent to %{email}."
+      invitation_token_invalid: "The invitation token provided is not valid!"
+      updated: "Your password was set successfully. You are now signed in."
+      updated_not_active: "Your password was set successfully."
+      no_invitations_remaining: "No invitations remaining"
+      invitation_removed: "Your invitation was removed."
+      new:
+        header: "Enviar invitación a un usuario nuevo"
+        submit_button: "Enviar"
+      edit:
+        header: "Define tu contraseña de usuario"
+        submit_button: "Enviar"
+    mailer:
+      invitation_instructions:
+        subject: "Instrucciones para confirmar tu cuenta"
+        hello: "Hola, %{email}"
+        someone_invited_you: "El administrador de Fundación IDEA te ha invitado a registrarte como editor o administrador. Da click en el link para confirmar tu cuenta."
+        accept: "Aceptar la invitación"
+        accept_until: "La invitación quedará inhabilitada el %{due_date}."
+        ignore: "Si no deseas aceptar la invitación, por favor ignora este correo, con lo cual tu cuenta no será creada."
+  time:
+    formats:
+      devise:
+        mailer:
+          invitation_instructions:
+            accept_until_format: "%B %d, %Y %I:%M %p"

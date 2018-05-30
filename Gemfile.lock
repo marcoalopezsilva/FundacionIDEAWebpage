@@ -54,6 +54,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (1.7.4)
+      actionmailer (>= 4.1.0)
+      devise (>= 4.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -88,6 +91,8 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     puma (3.11.4)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.5)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -162,11 +167,13 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass
   devise
+  devise_invitable (~> 1.7.0)
   figaro
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   puma (~> 3.0)
+  pundit
   rails (~> 5.1.2)
   sass-rails (~> 5.0)
   sqlite3
