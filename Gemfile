@@ -13,6 +13,7 @@ gem 'bootstrap-sass'
 
 # Gems to manage users
 gem 'devise'
+gem 'figaro'
 
  group :production do
    #pg causes an error in my laptop; will have to change it later

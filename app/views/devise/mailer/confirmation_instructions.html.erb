@@ -1,0 +1,5 @@
+<p>Bienvenidx al Sistema de Administración de Contenidos de Fundación IDEA, <%= @email %>!</p>
+
+<p>Por favor confirma tu cuenta haciendo click en este link:</p>
+
+<p><%= link_to 'Confirma mi cuenta', confirmation_url(@resource, confirmation_token: @token) %></p>
