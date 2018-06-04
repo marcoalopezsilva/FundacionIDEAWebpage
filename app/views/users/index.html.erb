@@ -1,0 +1,43 @@
+<div class="container-login">
+
+    <h2>Administración de Usuarios del Sistema de Administración de Contenidos</h2>
+    <strong>Usuarios existentes</strong>
+    <table class="table table-bordered table-hover">
+      <thead >
+        <tr class="bg-primary">
+          <th>Email del usuario</th>
+          <th>¿Confirmado?</th>
+          <th>Rol</th>
+          <th>Modificar rol</th>
+          <th>Eliminar usuario</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <tr>
+            <td><%= user.email %></td>
+            <% if user.confirmed_at %>
+              <td>Sí</td>
+            <% else %>
+              <td>No</td>
+            <% end %>
+            <td><%= user.role %></td>
+            <td></td>
+            <td></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <h2><%= t "devise.invitations.new.header" %></h2>
+
+    <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+      <%= devise_error_messages! %>
+    <% resource.class.invite_key_fields.each do |field| -%>
+      <p><%= f.label field %><br />
+      <%= f.text_field field %></p>
+    <% end -%>
+      <p><%= f.submit t("devise.invitations.new.submit_button") %></p>
+    <% end %>
+
+</div>
