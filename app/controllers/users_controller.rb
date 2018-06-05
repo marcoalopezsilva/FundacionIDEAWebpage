@@ -4,6 +4,26 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def delete_user
+    @user = User.find(params[:id])
+    @user.delete
+    if @user.delete
+      redirect_to users_index_path, notice: "¡Usuario eliminado!"
+    end
+  end
+
+  def toggle_role
+    @user = User.find(params[:id])
+    puts "User's old role was: #{@user.role}"
+    if @user.editor?
+      @user.admin!
+    else
+      @user.editor!
+    end
+    @user.save!
+    redirect_to users_index_path, notice: "¡Rol modificado!"if @user.save
+  end
+
   private
 
   def resource_name

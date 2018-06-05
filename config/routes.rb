@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  match 'users/:id/toggle' => 'users#toggle_role', :via => :put, :as => :toggle_role
+  match 'users/:id/delete' => 'users#delete_user', :via => :delete, :as => :delete_user
+
   devise_for :users
 
-  get 'users/index'
+  get 'users/index', to: 'users#index'
   get 'welcome/index'
   root 'welcome#index'
 
