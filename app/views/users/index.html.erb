@@ -32,6 +32,7 @@
     <h2><%= t "devise.invitations.new.header" %></h2>
 
     <%= form_for resource, :as => resource_name, :url => invitation_path(resource_name), :html => {:method => :post} do |f| %>
+    <p><%= "Los dominios permitidos son: #{User::APPROVED_DOMAINS}" %></p>
       <%= devise_error_messages! %>
     <% resource.class.invite_key_fields.each do |field| -%>
       <p><%= f.label field %><br />
