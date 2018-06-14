@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :publications
+  
   match 'users/:id/toggle' => 'users#toggle_role', :via => :put, :as => :toggle_role
   match 'users/:id/delete' => 'users#delete_user', :via => :delete, :as => :delete_user
 

@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @publication.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @publication.description %>
+</p>
+
+<p>
+  <strong>Tag:</strong>
+  <%= @publication.tag %>
+</p>
+
+<% (0...@publication.images.count).each do |image| %>
+    <%= image_tag(@publication.images[image]) %>
+    <% end %>
+
+<%= link_to 'Edit', edit_publication_path(@publication) %> |
+<%= link_to 'Back', publications_path %>
