@@ -15,9 +15,7 @@
   <%= @publication.tag %>
 </p>
 
-<% (0...@publication.images.count).each do |image| %>
-    <%= image_tag(@publication.images[image]) %>
-    <% end %>
+<%= image_tag(@publication.image) %>
 
 <%= link_to 'Edit', edit_publication_path(@publication) %> |
 <%= link_to 'Back', publications_path %>
