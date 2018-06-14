@@ -5,75 +5,18 @@
 
     <div class="publications">
 
+    <% @publications.each do |publication| %>
       <div class="publication-card">
         <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
+          <%= link_to image_tag(publication.thumbnail), publication_path(publication) %>
         </div>
         <div class="publication-info">
-          <h5>México Compacto 1</h5>
-          <h6>Desarrollo Urbano</h6>
+          <h5><%= publication.title %></h5>
+          <h6><%= publication.tag %></h6>
+          <h6><%= publication.pub_date.strftime("%Y") %></h6>
         </div>
       </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 2</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 3</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 4</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 5</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 6</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
-
-      <div class="publication-card">
-        <div class="publication-image">
-          <%= image_tag("MexicoCompacto-Portada.jpg") %>
-        </div>
-        <div class="publication-info">
-          <h5>México Compacto 7</h5>
-          <h6>Desarrollo Urbano</h6>
-        </div>
-      </div>
+     <% end %>
 
     </div>
 

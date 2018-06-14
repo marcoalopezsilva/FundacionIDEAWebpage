@@ -1,37 +1,54 @@
-<%= form_with(model: publication, local: true) do |form| %>
-  <% if publication.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(publication.errors.count, "error") %> prohibited this publication from being saved:</h2>
+<section class="container-publications">
 
-      <ul>
-      <% publication.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+    <%= form_with(model: publication, local: true) do |form| %>
+      <% if publication.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(publication.errors.count, "error") %> nos impidieron guardar:</h2>
+
+          <ul>
+          <% publication.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
+
+      <div class="field">
+        <%= form.label "Título de la Publicación" %><br />
+        <%= form.text_area :title %>
+      </div>
+
+      <div class="field">
+        <%= form.label "Texto descriptivo" %><br />
+        <%= form.text_area :description %>
+      </div>
+
+      <div class="field">
+        <%= form.label "Tags que apliquen" %><br />
+        <%= form.text_field :tag %>
+      </div>
+
+      <div class="field">
+        <%= form.label "Fecha de publicación original" %><br />
+        <%= form.date_field :pub_date %>
+      </div>
+
+      <div class="field">
+        <%= form.label "Imagen de la portada" %>
+        <%= form.file_field :image %>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_area :title %>
+    <div class="field">
+      <%= form.label "Documento" %>
+      <%= form.file_field :document %>
   </div>
+  <br />
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+      <br />
 
-  <div class="field">
-    <%= form.label :tag %>
-    <%= form.text_field :tag %>
-  </div>
+    <% end %>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-</div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</section>

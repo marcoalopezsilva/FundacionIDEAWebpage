@@ -1,21 +1,36 @@
-<p id="notice"><%= notice %></p>
+<section class="container-publications">
 
-<p>
-  <strong>Title:</strong>
-  <%= @publication.title %>
-</p>
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @publication.description %>
-</p>
+    <p>
+      <strong>Título: </strong>
+      <%= @publication.title %>
+    </p>
 
-<p>
-  <strong>Tag:</strong>
-  <%= @publication.tag %>
-</p>
+    <p>
+      <strong>Descripción: </strong>
+      <%= @publication.description %>
+    </p>
 
-<%= image_tag(@publication.image) %>
+    <p>
+      <strong>Tag:</strong>
+      <%= @publication.tag %>
+    </p>
 
-<%= link_to 'Edit', edit_publication_path(@publication) %> |
-<%= link_to 'Back', publications_path %>
+    <p>
+      <strong>Fecha de publicación (original): </strong>
+      <%= @publication.pub_date.strftime("%Y") %>
+    </p>
+
+    <div class="publication-image">
+        <%= link_to image_tag(@publication.thumbnail), @publication.document, download: '' %>
+    </div>
+    <br />
+    <% if user_signed_in? %>
+        <%= link_to 'Editar', edit_publication_path(@publication), class:"btn btn-warning" %>
+        <%= link_to 'Regresar', publications_path, class:"btn btn-default" %>
+        <% else %>
+        <%= link_to 'Regresar', root_path, class:"btn btn-default" %>
+    <% end %>
+
+</section>

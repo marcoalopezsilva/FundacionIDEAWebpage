@@ -2,32 +2,34 @@
 
     <h2>Administración de Usuarios del Sistema de Administración de Contenidos</h2>
     <strong>Usuarios existentes</strong>
-    <table class="table table-bordered table-hover">
-      <thead >
-        <tr class="bg-primary">
-          <th>Email del usuario</th>
-          <th>¿Confirmado?</th>
-          <th>Rol</th>
-          <th>Modificar rol</th>
-          <th>Eliminar usuario</th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
-          <tr>
-            <td><%= user.email %></td>
-            <% if user.confirmed_at %>
-              <td>Sí</td>
-            <% else %>
-              <td>No</td>
+    <div class="table-max">
+        <table class="table table-bordered table-hover">
+          <thead >
+            <tr class="bg-primary">
+              <th>Email del usuario</th>
+              <th>¿Confirmado?</th>
+              <th>Rol</th>
+              <th>Modificar rol</th>
+              <th>Eliminar usuario</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @users.each do |user| %>
+              <tr>
+                <td><%= user.email %></td>
+                <% if user.confirmed_at %>
+                  <td>Sí</td>
+                <% else %>
+                  <td>No</td>
+                <% end %>
+                <td><%= user.role %></td>
+                <td><%= link_to "Modificar", toggle_role_path(user), method: :put, class:"btn btn-warning" %></td>
+                <td><%= link_to "Eliminar", delete_user_path(user), method: :delete, class:"btn btn-danger", data: { confirm: "¿Estás seguro?" } %></td>
+              </tr>
             <% end %>
-            <td><%= user.role %></td>
-            <td><%= link_to "Modificar", toggle_role_path(user), method: :put, class:"btn btn-warning" %></td>
-            <td><%= link_to "Eliminar", delete_user_path(user), method: :delete, class:"btn btn-danger", data: { confirm: "¿Estás seguro?" } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+    </div>
 
     <h2><%= t "devise.invitations.new.header" %></h2>
 

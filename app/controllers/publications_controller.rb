@@ -28,7 +28,7 @@ class PublicationsController < ApplicationController
 
     respond_to do |format|
       if @publication.save
-        format.html { redirect_to @publication, notice: 'Publication was successfully created.' }
+        format.html { redirect_to @publication, notice: 'La Publicación fue creada exitosamente.' }
         format.json { render :show, status: :created, location: @publication }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PublicationsController < ApplicationController
   def update
     respond_to do |format|
       if @publication.update(publication_params)
-        format.html { redirect_to @publication, notice: 'Publication was successfully updated.' }
+        format.html { redirect_to @publication, notice: 'La Publicación fue editada exitosamente.' }
         format.json { render :show, status: :ok, location: @publication }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PublicationsController < ApplicationController
   def destroy
     @publication.destroy
     respond_to do |format|
-      format.html { redirect_to publications_url, notice: 'Publication was successfully destroyed.' }
+      format.html { redirect_to publications_url, notice: 'La Publicación fue eliminada.' }
       format.json { head :no_content }
     end
   end
@@ -69,6 +69,6 @@ class PublicationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def publication_params
-      params.require(:publication).permit(:title, :description, :tag, :image)
+      params.require(:publication).permit(:title, :description, :tag, :pub_date, :image, :document)
     end
 end
