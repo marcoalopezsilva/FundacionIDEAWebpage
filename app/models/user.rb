@@ -15,6 +15,8 @@ class User < ApplicationRecord
 
     validates :email, presence: true, if: :domain_check
 
+    has_many :publications
+
     def init
         self.role ||= :editor
     end

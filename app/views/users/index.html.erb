@@ -6,8 +6,10 @@
         <table class="table table-bordered table-hover">
           <thead >
             <tr class="bg-primary">
+              <th>ID del usuario</th>
               <th>Email del usuario</th>
               <th>¿Confirmado?</th>
+              <th>Invitado por</th>
               <th>Rol</th>
               <th>Modificar rol</th>
               <th>Eliminar usuario</th>
@@ -16,12 +18,15 @@
           <tbody>
             <% @users.each do |user| %>
               <tr>
+                <td><%= user.id %></td>
                 <td><%= user.email %></td>
                 <% if user.confirmed_at %>
                   <td>Sí</td>
                 <% else %>
                   <td>No</td>
                 <% end %>
+                <td><%= user.invited_by_id %>
+                    <!--%= User.find_by(id: user.invited_by_id).email %--></td>
                 <td><%= user.role %></td>
                 <td><%= link_to "Modificar", toggle_role_path(user), method: :put, class:"btn btn-warning" %></td>
                 <td><%= link_to "Eliminar", delete_user_path(user), method: :delete, class:"btn btn-danger", data: { confirm: "¿Estás seguro?" } %></td>

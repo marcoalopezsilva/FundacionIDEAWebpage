@@ -11,8 +11,8 @@
           <thead >
             <tr class="bg-primary">
               <th>Título</th>
-              <th>Tags</th>
-              <th>Última modificación por</th>
+              <th>Tag</th>
+              <th>Creado por</th>
               <th colspan="3">Acciones</th>
             </tr>
           </thead>
@@ -21,7 +21,11 @@
               <tr>
                 <td><%= publication.title %></td>
                 <td><%= publication.tag %></td>
-                <td>Pendiente</td>
+                <td><%= publication.user_id %><br />
+                <%= publication.user %>
+                <!--%= User.find_by(id: publication.user_id).email -->
+                <!--%= publication.user.email %-->
+                </td>
                 <td><%= link_to 'Mostrar', publication, class:"btn btn-info" %></td>
                 <td><%= link_to 'Editar', edit_publication_path(publication), class:"btn btn-warning" %></td>
                 <td><%= link_to 'Eliminar', publication, method: :delete, class:"btn btn-danger", data: { confirm: 'Estás seguro?' } %></td>
@@ -35,5 +39,5 @@
     <br>
     <%= link_to 'Nueva Publicación', new_publication_path, class:"btn btn-success" %>
     <br />
-    
+
 </section>
