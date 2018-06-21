@@ -2,6 +2,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+    @users.each do |user|
+        puts user.invited_by_id
+    end
   end
 
   def delete_user

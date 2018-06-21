@@ -21,11 +21,7 @@
               <tr>
                 <td><%= publication.title %></td>
                 <td><%= publication.tag %></td>
-                <td><%= publication.user_id %><br />
-                <%= publication.user %>
-                <!--%= User.find_by(id: publication.user_id).email -->
-                <!--%= publication.user.email %-->
-                </td>
+                <td><%= publication.user.email %></td>
                 <td><%= link_to 'Mostrar', publication, class:"btn btn-info" %></td>
                 <td><%= link_to 'Editar', edit_publication_path(publication), class:"btn btn-warning" %></td>
                 <td><%= link_to 'Eliminar', publication, method: :delete, class:"btn btn-danger", data: { confirm: 'Estás seguro?' } %></td>
