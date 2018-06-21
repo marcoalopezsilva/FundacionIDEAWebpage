@@ -2,10 +2,9 @@ class User < ApplicationRecord
 
     APPROVED_DOMAINS = ["fundacionidea.org.mx", "c-230.com"]
 
-    #Next line is not currently needed, but I will need it once I code for documents upload
-    #has_many :project_documents
-
     after_initialize :init
+
+    has_many :publications
 
     devise :invitable, :database_authenticatable, :registerable,
            :recoverable, :rememberable, :trackable, :validatable,
@@ -15,7 +14,6 @@ class User < ApplicationRecord
 
     validates :email, presence: true, if: :domain_check
 
-    has_many :publications
 
     def init
         self.role ||= :editor
