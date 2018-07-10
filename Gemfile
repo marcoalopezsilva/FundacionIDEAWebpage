@@ -22,8 +22,8 @@ gem 'pundit'
 gem 'devise_invitable', '~> 1.7.0'
 
  group :production do
-   #pg causes an error in my laptop; will have to change it later
-   #gem 'pg'
+     gem 'pg'
+     gem 'rails_12factor'
  end
 
  group :development do
