@@ -22,8 +22,7 @@ gem 'pundit'
 gem 'devise_invitable', '~> 1.7.0'
 
  group :production do
-     gem 'pg'
-     gem 'rails_12factor'
+     gem 'sqlite3'
  end
 
  group :development do
