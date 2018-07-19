@@ -8,7 +8,9 @@
     <% @publications.each do |publication| %>
       <div class="publication-card">
         <div class="publication-image">
-          <%= link_to image_tag(publication.thumbnail), publication_path(publication) %>
+            <% if publication.image %>
+                <%= link_to image_tag(publication.thumbnail), publication_path(publication) %>
+            <% end %>
         </div>
         <div class="publication-info">
           <h5><%= publication.title %></h5>
