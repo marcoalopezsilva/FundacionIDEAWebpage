@@ -14,6 +14,7 @@ source 'https://rubygems.org'
 
 #UI utilities
 gem 'bootstrap-sass'
+gem 'bcrypt'
 
 # Gems to manage users
 gem 'devise'
@@ -49,4 +50,6 @@ gem 'devise_invitable', '~> 1.7.0'
 
  group :development do
    gem 'listen', '~> 3.0.5'
+   gem 'pry-rails'
+
  end

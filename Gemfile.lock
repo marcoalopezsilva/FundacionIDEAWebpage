@@ -50,6 +50,7 @@ GEM
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     builder (3.2.3)
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
     crass (1.0.4)
     devise (4.4.3)
@@ -99,6 +100,14 @@ GEM
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
     pg (1.0.0)
+<<<<<<< HEAD
+=======
+    pry (0.11.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.9.0)
+    pry-rails (0.3.6)
+      pry (>= 0.10.4)
+>>>>>>> 15c90d021cf616187b77898a3f4b976f40b45827
     puma (3.11.4)
     pundit (1.1.0)
       activesupport (>= 3.0.0)
@@ -180,6 +189,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   bootstrap-sass
   devise
   devise_invitable (~> 1.7.0)
@@ -189,6 +199,10 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mini_magick (~> 4.8)
   pg
+<<<<<<< HEAD
+=======
+  pry-rails
+>>>>>>> 15c90d021cf616187b77898a3f4b976f40b45827
   puma (~> 3.0)
   pundit
   rails (~> 5.2.0)

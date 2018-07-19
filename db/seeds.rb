@@ -16,5 +16,6 @@ editor_user.skip_confirmation!
 admin_user.save
 editor_user.save
 
+
 puts "Seed finished"
 puts "#{User.count} users created"
