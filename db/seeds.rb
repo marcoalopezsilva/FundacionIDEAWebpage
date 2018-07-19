@@ -23,6 +23,7 @@ doc1 = Publication.new(
     pub_date: "2016-06-14",
     user: User.order("RANDOM()").first
 )
+=begin
 doc1.image.attach(
    io: File.open('app/assets/images/MexicoCompactoPortada.jpg'),
    filename: 'MexicoCompactoPortada.jpg',
@@ -33,6 +34,7 @@ doc1.document.attach(
    filename: 'MexicoCompactoDocumento.pdf',
    content_type: 'application/pdf'
 )
+=end
 doc1.save
 
 

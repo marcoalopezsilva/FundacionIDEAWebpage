@@ -8,8 +8,8 @@ class Publication < ApplicationRecord
     validates :tag, presence: true
     validates :pub_date, presence: true
 
-    validate :image_type
-    validate :document_type
+    #validate :image_type
+    #validate :document_type
 
     def thumbnail
         return self.image.variant(resize: '300x300').processed
